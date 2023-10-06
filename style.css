@@ -5,6 +5,8 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
 }
+
+
 header{
     width: 100vw;
     height: 50px;
@@ -18,6 +20,8 @@ header h1{
     width: 50px;
     font-size: 15px;
 }
+
+
 .applicants--info{
     position: absolute;
     left: 50%;
@@ -76,6 +80,7 @@ header h1{
     color: blue;
 }
 
+
 main{
     width: 100vw;
     height: 100vh;
@@ -89,5 +94,122 @@ main{
 .machine{
     width: 800px;
     height: 400px;
+    margin-top: 100px;
     background-color: #DAD4C8;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.machine .screen{
+    width: 60%;
+    height: 90%;
+    
+}
+.machine .keys{
+    width: 30%;
+    height: 90%;
+}
+.machine .keys, .machine .screen{
+    background-color: white;
+    border: 2px solid #2222224a;
+}
+.machine .screen--home, .screen--vote{
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    position: relative;
+    display: none;
+}
+.screen--home h1, .screen--vote h1{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 28px;
+    color: #b5b0a8;
+}
+
+.numbers--container{
+    width: 65px;
+    height: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.number{
+    width: 30px;
+    height: 100%;
+    border: 1px solid black;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes numberSelected {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+.number.selected{
+    opacity: 1;
+    animation: numberSelected 1.5s infinite;
+}
+.screen--vote{
+    display: block;
+}
+.screen--vote-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.your--vote--container{
+    display: flex;
+    margin: 20px 0px;
+}
+.screen--vote-container h2{
+    font-size: 18px;
+    font-weight: 100;
+    width: 120px;
+}
+.screen--vote-container .your--vote, .numbers--container, .partie span{
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.numbers, .partie{
+    margin-bottom: 20px;
+    display: flex;
+}
+.partie span{
+    font-weight: 100;
+    font-size: 20px;
+}
+.footer{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 20px;
+    left: -20px;
+    display: flex;
+    border-top: 2px solid black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 13px;
+}
+.footer--left p{
+    margin-left: 10px;
+}
+.footer--left p:last-child{
+    margin-left: 20px;
+}
+.footer--left p span{
+    color: green;
+}
+.footer--left p:last-child span{
+    color: red;
 }
