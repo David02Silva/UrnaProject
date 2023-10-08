@@ -184,9 +184,12 @@ main{
     margin-bottom: 20px;
     display: flex;
 }
+.partie{
+    margin-top: 40px;
+}
 .partie span{
     font-weight: 100;
-    font-size: 20px;
+    font-size: 17px;
 }
 .footer{
     width: 100%;
@@ -212,4 +215,55 @@ main{
 }
 .footer--left p:last-child span{
     color: red;
+}
+.keys{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.key--number---container{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 30px);
+    grid-template-rows: repeat(4, 30px);
+    gap: 30px;
+    justify-content: center;
+}
+.key{
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.key0{
+    grid-column: 2/3;
+}
+.key--other---container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.key--other---container .btn{
+    width: 60px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #444;
+}
+.btn--white{
+    background-color: white;
+}
+.btn--correct{
+    background-color: red;
+}
+.btn--enter{
+    background-color: green;
+    width: 60px;
+    height: 60px;
 }
