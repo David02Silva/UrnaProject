@@ -53,25 +53,25 @@ header h1{
     height: 70%;
     display: flex;
 }
-.applicants--container .applicant{
+.applicants--container .applicant-info{
     flex: 1;
     height: 100%;
 }
-.applicants--container .applicant a{
+.applicants--container .applicant-infot a{
      display: flex;
     flex-direction: column;
     align-items:center;
 }
-.applicants--container .applicant h2{
-    font-size: 20px;
+.applicants--container .applicant-info h2{
+    font-size: 17px;
 }
-.applicants--container .applicant h3{
+.applicants--container .applicant-info h3{
     width: 60%;
-    font-size: 15px;
+    font-size: 13px;
     text-transform: uppercase;
     margin-top: 20px;
 }
-.applicants--container .applicant a{
+.applicants--container .applicant-info a{
     text-decoration: none;
     color: white;
     height: 100%;
@@ -81,7 +81,7 @@ header h1{
     flex-wrap: wrap;
     justify-content: center;
 }
-.applicants--container .applicant a:hover{
+.applicants--container .applicant-info a:hover{
     color: blue;
 }
 
@@ -394,12 +394,24 @@ color: black;
     display: flex;
     align-items: center;
 }
+.name-number .name-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+    font-size: 18px;
+    text-align: left;
+}
 .n-number{
     font-size: 50px;
 }
-.name-number .name{
+.name-number .name-party{
     width: 20px;
-    margin-left: 10px;
+    margin-bottom: 4px;
+}
+.name-number .name-real{
+    margin-left: 15px;
 }
 .individual-info{
     display: flex;
