@@ -4,11 +4,14 @@ let squareNumbers = "";
 let screenHNumber = document.querySelectorAll(".screen--home .number")
 let screenHome = document.querySelector(".screen--home");
 let screenVote = document.querySelector(".screen--vote");
+let screenChosen = document.querySelector(".screen--chosen");
+let screenLoad = document.querySelector(".screen--chosen");
 let notFound = false;
 let keys = document.querySelectorAll(".keys .key");
 let keyVote = screenVote.querySelectorAll(".number")
 let voteOn = false;
 let chosen = "";
+let correctRepeat = false;
 
 
 
@@ -135,7 +138,7 @@ keys.forEach((key)=>{
 
 // Button Enter
 document.querySelector(".btn--enter").addEventListener("click", ()=>{
-   if(squList.findIndex((squ) => squ === parseInt(squareNumbers)) == -1){
+   if(squList.findIndex((squ) => squ === parseInt(squareNumbers)) == -1 && voteOn == false){
     
     if(notFound == true){
         return
@@ -164,7 +167,17 @@ document.querySelector(".btn--enter").addEventListener("click", ()=>{
             if(chosen.applicant.findIndex((item)=> item.number == squareNumbers) === -1){
                 console.log("Não existe!")
             }else{
-                console.log("Existe!!")
+                screenVote.style.display = "none";
+                document.querySelector(".screen--loading").style.display = "flex";
+
+                setTimeout( ()=>{
+                        screenLoad.style.display = "none";
+                        screenChosen.style.display = "flex";
+            }, 2500)
+
+            let date = new Date();
+            console.log(date)
+            
             }
             console.log(squareNumbers)
         }
@@ -202,8 +215,21 @@ document.querySelector(".btn--correct").addEventListener("click", ()=>{
             keyVote[3].innerHTML = "";
             keyVote[3].classList.add("selected");
         }
-        if(squareNumbers.length == 0){
-            console.log("Vai voltar!")
+        if(squareNumbers.length == 0 && correctRepeat == false){
+            correctRepeat = true;
+            return
+        } if (correctRepeat == true){
+
+            screenVote.style.display = "none";
+            screenHome.style.display = "block";
+
+            voteOn = false;
+            squareNumbers = "";
+            screenHome.querySelectorAll(".number").forEach((item)=>{
+                item.innerHTML = "";
+            })
+
+            correctRepeat = false;
         }
 
     }
