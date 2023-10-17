@@ -170,16 +170,21 @@ document.querySelector(".btn--enter").addEventListener("click", ()=>{
                 screenVote.style.display = "none";
                 document.querySelector(".screen--loading").style.display = "flex";
 
-                setTimeout( ()=>{
-                        screenLoad.style.display = "none";
+                setInterval( ()=>{
+                        
                         screenChosen.style.display = "flex";
+                        document.querySelector(".screen--loading").style.display = "none";
             }, 2500)
 
             let date = new Date();
-            console.log(date)
-            
+            let show = `${date.toUTCString()}`;
+            let person = chosen.applicant.find((item) => item.number == squareNumbers);
+
+            screenChosen.querySelector(".timer span").innerHTML = show;
+            screenChosen.querySelector(".chosen--name span").innerHTML = person.name;
+            screenChosen.querySelector(".chosen--number span").innerHTML = person.number;
+            screenChosen.querySelector("img").src = person.img;
             }
-            console.log(squareNumbers)
         }
 })
 
