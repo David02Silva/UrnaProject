@@ -6,13 +6,15 @@ let screenHome = document.querySelector(".screen--home");
 let screenVote = document.querySelector(".screen--vote");
 let screenChosen = document.querySelector(".screen--chosen");
 let screenLoad = document.querySelector(".screen--chosen");
+let screenWhite = document.querySelector(".screen--whiteVote");
 let notFound = false;
 let keys = document.querySelectorAll(".keys .key");
 let keyVote = screenVote.querySelectorAll(".number")
 let voteOn = false;
 let chosen = "";
 let correctRepeat = false;
-
+let whiteVote = false;
+let voteDone = false;
 
 
 let notFoundMens = document.createElement("h3");
@@ -158,14 +160,12 @@ document.querySelector(".btn--enter").addEventListener("click", ()=>{
             
             screenVote.querySelector(".partie h2 span").innerHTML = chosen.number;
             voteOn = true;
-            console.log("Vote HOME")
             return
         }
    }
-        if(voteOn == true){
-            console.log("VoteOOONNN")
+        if(voteOn == true && voteDone == false){
             if(chosen.applicant.findIndex((item)=> item.number == squareNumbers) === -1){
-                console.log("Não existe!")
+                alert("Applicant not Found...")
             }else{
                 screenVote.style.display = "none";
                 document.querySelector(".screen--loading").style.display = "flex";
@@ -184,6 +184,7 @@ document.querySelector(".btn--enter").addEventListener("click", ()=>{
             screenChosen.querySelector(".chosen--name span").innerHTML = person.name;
             screenChosen.querySelector(".chosen--number span").innerHTML = person.number;
             screenChosen.querySelector("img").src = person.img;
+            voteDone = true;
             }
         }
 })
@@ -236,8 +237,32 @@ document.querySelector(".btn--correct").addEventListener("click", ()=>{
 
             correctRepeat = false;
         }
-
     }
     
+    if(whiteVote == true){
+        location.reload()
+    }
+    if(voteDone == true){
+        location.reload()
+    }
     
+})
+
+// Button White
+document.querySelector(".btn--white").addEventListener("click", ()=>{
+    if(whiteVote == false){
+        if(voteOn == false){
+            screenHome.style.display = "none";
+            screenWhite.style.display = "flex";
+        }else{
+            screenVote.style.display = "none";
+            screenWhite.style.display = "flex";
+        }
+    let date = new Date();
+    let show = `${date.toUTCString()}`;
+
+   screenWhite.querySelector(".time span").innerHTML = show;
+    
+    whiteVote = true; 
+    }
 })

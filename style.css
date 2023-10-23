@@ -210,7 +210,36 @@ color: black;
     background-color: yellowgreen;
     animation: loading 2s linear;
 }
-
+.screen--whiteVote{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    display: none;
+}
+.screen--whiteVote h1{
+    font-size: 40px;
+    text-align: center;
+}
+.screen--whiteVote .time{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 23px;
+}
+.screen--whiteVote .footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+}
+.screen--whiteVote .footer span{
+    color: red;
+}
 .screen--chosen{
     width: 100%;
     height: 100%;
@@ -247,7 +276,6 @@ color: black;
 .chosen--name{
     margin-bottom: 50px;
 }
-
 .screen--chosen img{
     width: 200px;
     height: 300px;
