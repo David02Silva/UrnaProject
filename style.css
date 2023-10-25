@@ -570,6 +570,10 @@ color: black;
 }
 
 @media (max-width: 750px){
+    main{
+        padding: 0;
+        margin: 0;
+    }
     .applicants--info{
         display: none;
     }
@@ -633,6 +637,34 @@ color: black;
         position: absolute;
         left: 0;
         top: 0;
+    }
+    .screen--vote h1{
+        display: none;
+    }
+    .screen--vote .partie .info{
+        font-size: 15px;
+        margin: 0;
+        margin-left: 15px;
+    }
+    .screen--vote .partie{
+        margin: 0;
+    }
+    .screen--vote .your--vote, .screen--vote .numbers--container{
+        margin: 0;
+        line-height: 20px;
+        margin-bottom: 25px;
+    }
+    .screen--vote .footer{
+        width: 100%;
+        height: fit-content;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+    }
+    .screen--vote .footer--right{
+        display: none;
     }
     .machine .screen::after{
         content: "";
